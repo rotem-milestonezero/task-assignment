@@ -4,13 +4,16 @@ Create a Full Stack application using [NestJS](https://nestjs.com/), [React](htt
 
 **NestJs Backend** 
 
-* UsersAPI: Create a NestJs API that fetches data from https://jsonplaceholder.typicode.com/users. The API should return user data with the following fields: name, email, company name. 
-* PostsAPI: Create another API that fetches posts of a selected user from https://jsonplaceholder.typicode.com/posts. 
-* NewPostAPI: Add an API endpoint that allows users to create a new post. The new post should be added to the list of posts for the user.
+* UsersAPI: Create a NestJs API that fetches data from `https://jsonplaceholder.typicode.com/users`. The API should return user data with the following fields: name, email, company name. 
+* PostsAPI: Create another API that fetches posts of a selected user from `https://jsonplaceholder.typicode.com/posts`. 
+* NewPostAPI: Add an API endpoint that allows users to create a new post. The new post should be saved in the DB (see `PostgreSQL` section below. In case the related user isn't exist, save it also.
+* Input Validation: Every request's DTO fields types should be validated using Nest's basic input validation tools (Pipe and Decorators)
 
 ***NestJs Decorators***
 
-Custom Decorator: Create a custom decorator that logs the execution time the method it's applied to. This decorator should print the name of the method and the time it took to execute. Apply this time execution log decorator to all API's.
+Custom Decorator: Create a custom decorator that logs the execution time the method it's applied to. 
+This decorator should print the name of the method and the time it took to execute. 
+Apply this time execution log decorator to all API's.
 
 ***NestJs Interceptors***
 
@@ -19,10 +22,7 @@ The log should include the HTTP method, the URL, the request payload, the respon
 
 ***PostgreSQL + TypeORM*** 
 
-Save duplications of the data recived from `https://jsonplaceholder.typicode.com/users` and `https://jsonplaceholder.typicode.com/posts`, 
-in Postgres DB before sending it back to the user. 
-
-Entity Relationships: Define entities for User and Post with a one-to-many relationship (one user can have many posts). 
+Entity Relationships: Define entities for User and Post with a one-to-many relationship (one user can have many posts).
 Use TypeORM decorators to define the entities and the relationship.
 CRUD Operations: Implement CRUD (Create, Read, Update, Delete) operations for the User and Post entities using TypeORM.
 
@@ -32,9 +32,16 @@ Containerize your application (backend NodeJS/Nest and Database if done) using D
 
 **React Frontend** 
 
+Use `MUI` as your UI components library.
+
 UsersTable: The home page is a table of users, which shows data fetched from your UsersAPI, with the following columns: name, email, company name. 
 UserPosts: Upon selection of a user, display a list of posts posted by the selected user on the right side of the screen (get data from your PostsAPI). 
 NewPost: Add a "Create post" button to UserPosts that will open a dialog where the user can enter details to create the post. After the post is created, the list of posts for the user (UserPosts) will be updated with the new post. 
+
+***State Managment and API calls***
+
+* All state should be managed using Redux Toolkit - don't use internal state (useState)
+* All API calls from the components  should be handled using Redux Toolkit Query.
 
 **Bonus points for:**
 * Error handling when fetching data from the API. What should the user get? What do you do as the system in such a case? 
