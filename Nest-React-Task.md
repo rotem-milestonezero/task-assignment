@@ -66,7 +66,7 @@ Use `MUI` as your UI components library.
 
 * Make use of the latest features of NestJs and React like hooks. 
 
-* Try to produce a professional-looking page so use a component library such as Material-UI, Ant Design, or anything else you like. 
+* Try to produce a professional-looking page. 
 
 **Final thoughts**
 
