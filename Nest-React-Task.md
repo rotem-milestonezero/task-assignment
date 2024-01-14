@@ -34,14 +34,14 @@ Containerize your application (backend NodeJS/Nest and Database if done) using D
 
 Use `MUI` as your UI components library.
 
-UsersTable: The home page is a table of users, which shows data fetched from your UsersAPI, with the following columns: name, email, company name. 
-UserPosts: Upon selection of a user, display a list of posts posted by the selected user on the right side of the screen (get data from your PostsAPI). 
-NewPost: Add a "Create post" button to UserPosts that will open a dialog where the user can enter details to create the post. After the post is created, the list of posts for the user (UserPosts) will be updated with the new post. 
+- UsersTable: The home page is a table of users, which shows data fetched from your UsersAPI, with the following columns: name, email, company name. 
+- UserPosts: Upon selection of a user, display a list of posts posted by the selected user on the right side of the screen (get data from your PostsAPI). 
+- NewPost: Add a "Create post" button to UserPosts that will open a dialog where the user can enter details to create the post. After the post is created, the list of posts for the user (UserPosts) will be updated with the new post. 
 
 ***State Managment and API calls***
 
-* All state should be managed using Redux Toolkit - don't use internal state (useState)
-* All API calls from the components  should be handled using Redux Toolkit Query.
+* All state should be managed using `Redux Toolkit` - don't use internal state (useState)
+* All API calls from the components should be handled using `Redux Toolkit Query`.
 
 **Bonus points for:**
 * Error handling when fetching data from the API. What should the user get? What do you do as the system in such a case? 
